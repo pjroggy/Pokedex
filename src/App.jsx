@@ -1,14 +1,18 @@
+import { Outlet } from "react-router";
 import "./App.css";
-import PokemonCard from "./components/PokemonCard";
-import Pokemon from "./pages/Pokemon";
-import PokemonList from "./pages/PokemonList";
+import { Link } from "react-router-dom";
 
 function App() {
-  return <>
-  <PokemonList/>
-  <Pokemon/>
-  <PokemonCard/>
-  </>;
+  return (
+    <>
+    <nav>
+      <Link to="/">Pokemons</Link>
+    </nav>
+    <main>
+      <Outlet />
+    </main>
+    </>
+  );
 }
 
 export default App;

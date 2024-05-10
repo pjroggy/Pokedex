@@ -1,0 +1,24 @@
+.pokemonCard {
+    width: auto;
+    background-color: rgb(255, 208, 0);
+    border-radius: 1rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    h1 {
+      text-align: center;
+    }
+    .pokemonImg{
+      margin: 0.5rem;
+      width: 20%;
+      height: auto;
+    }
+  }
+  a{
+    margin: 0.5rem;
+    text-decoration: none;
+    color: rgb(16, 16, 16);
+  }

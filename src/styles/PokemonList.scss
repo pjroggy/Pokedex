@@ -1,0 +1,17 @@
+.pokemonList {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-rows: auto;
+}
+button {
+  outline: none;
+  border: none;
+  width: 5rem;
+  padding: 0.3rem 0;
+  margin: 1rem;
+  color: rgb(253, 242, 227);
+  background-color: rgb(251, 69, 14);
+  border-radius: 10px;
+}
