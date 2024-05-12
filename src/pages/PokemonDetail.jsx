@@ -11,20 +11,19 @@ function PokemonDetail() {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
       .then((res) => res.json())
       .then((data) => {
-        setNewPokemonDetails(data)
+        setNewPokemonDetails(data);
         setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
       });
-    },[]);
+  }, []);
 
-    if(isLoading){
-      <p>Loading...</p>
-    }
-    return (
-      <>
-      <h1>Pokemon</h1>
+  if (isLoading) {
+    <p>Loading...</p>;
+  }
+  return (
+    <>
       <section className="pokemonCardDetail">
         <h1 className="pokemonNameDetail">{pokemonDetails.name}</h1>
         <img
@@ -34,39 +33,41 @@ function PokemonDetail() {
         />
         <h2 className="abilitiesTitle">Abilities</h2>
         <ul className="abilities">
-          {pokemonDetails.abilities && pokemonDetails.abilities.map((poke) => {
-            return (
-              <>
-                <li>{poke.ability.name}</li>
-              </>
-            );
-          })}
+          {pokemonDetails.abilities &&
+            pokemonDetails.abilities.map((poke) => {
+              return (
+                <>
+                  <li>{poke.ability.name}</li>
+                </>
+              );
+            })}
         </ul>
 
         <h2 className="baseStatsTitle">Base stats</h2>
         <ul className="baseStats">
-          {pokemonDetails.stats && pokemonDetails.stats.map((poke) => {
-            return (
-              <>
-                <li>{poke.stat.name}:</li>
-              </>
-            );
-          })}
+          {pokemonDetails.stats &&
+            pokemonDetails.stats.map((poke) => {
+              return (
+                <>
+                  <li>{poke.stat.name} : {poke.base_stat}</li>
+                </>
+              );
+            })}
         </ul>
         <h2 className="typeTitle">Type</h2>
         <ul className="type">
-          {pokemonDetails.types && pokemonDetails.types.map((poke)=>{
-            return (
-              <>
-              <li>{poke.type.name}</li>
-              </>
-            )
-          })}
+          {pokemonDetails.types &&
+            pokemonDetails.types.map((poke) => {
+              return (
+                <>
+                  <li>{poke.type.name}</li>
+                </>
+              );
+            })}
         </ul>
       </section>
     </>
   );
 }
-
 
 export default PokemonDetail;

@@ -1,24 +1,119 @@
 .pokemonCard {
-    width: auto;
-    background-color: rgb(255, 208, 0);
+  border: 10px solid gold;
+  width: calc(var(--card-height) / 1.5);
+  height: 20rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  perspective: 2500px;
+  background-color: rgba(250, 221, 208, 0.558);
+  border-radius: 1rem;
+
+  h1,
+  h2 {
+    text-align: center;
+    color: rgb(16, 4, 247);
+  }
+  .pokemonImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s;
+  }
+  .wrapper {
     border-radius: 1rem;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
-    padding: 0 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    h1 {
-      text-align: center;
-    }
-    .pokemonImg{
-      margin: 0.5rem;
-      width: 20%;
-      height: auto;
-    }
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
   }
-  a{
-    margin: 0.5rem;
-    text-decoration: none;
-    color: rgb(16, 16, 16);
-  }
+}
+a {
+  margin: 0.5rem;
+  text-decoration: none;
+  color: rgb(16, 16, 16);
+}
+
+.pokemonCard:hover .wrapper {
+  background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+  opacity: 0;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 6%,
+    rgba(247, 9, 156, 0.5) 50%,
+    rgba(223, 9, 247, 0.5) 75%,
+    rgb(104, 11, 244) 95%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(247, 235, 9, 0.5) 60%,
+    rgba(104, 247, 9, 0.5) 75%,
+    rgb(11, 244, 228) 97%
+  );
+}
+
+.pokemonCard:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.pokemonCard:hover .wrapper::after {
+  height: 16rem;
+}
+.pokemonName {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.pokemonCard:hover .pokemonName {
+  transform: translate3d(0%, -12px, 100px);
+}
+.pokemonCard:hover .pokemonImg {
+  opacity: 0;
+}
+.pokemonCard:hover h1 {
+  opacity: 0;
+}
+
+.pokemon3D {
+  border-radius: 1rem;
+  width: 100%;
+  height: 15rem;
+  object-fit: contain;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.pokemonCard:hover .pokemon3D {
+  opacity: 1;
+  transform: translate3d(0%, -10%, 100px);
+}

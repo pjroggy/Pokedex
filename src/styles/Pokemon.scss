@@ -1,20 +1,93 @@
 .pokemonCardDetail {
-  width: auto;
-  background-color: rgb(250, 145, 6);
+  display: flex;
+  flex-direction: column;
+  border: 10px solid gold;
+  width: 30rem;
+  height: 100%;
+  background-color: rgb(4, 190, 10);
   border-radius: 1rem;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
-  text-align: center;
+  padding: 1rem;
   color: rgb(20, 19, 19);
-
+  h1,
+  h2 {
+    text-align: center;
+  }
+  h2 {
+    border: 5px yellow outset;
+    background: linear-gradient(to right, goldenrod, yellow, goldenrod);
+    box-shadow: 3px 3px 10px #151414;
+  }
   .pokemonNameDetail {
     margin: 1rem;
+    text-transform: uppercase;
   }
   .pokemonImgDetail {
+    background-color: rgba(13, 252, 13, 0.525);
+    border: 5px yellow outset;
+    box-shadow: 3px 3px 10px #151414;
+    border-radius: 1rem;
+    padding: 2rem;
     margin: 2rem;
-    height: 2rem;
+    width: auto;
+    height: 20rem;
   }
   ul {
     list-style: none;
+    padding: 0;
+  }
+  .abilities {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    li {
+      font-size: larger;
+      font-weight: bold;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      border: 1px solid black;
+      border-radius: 1rem;
+      color: rgb(5, 5, 5);
+      background: linear-gradient(
+        to right,
+        rgb(218, 32, 32),
+        rgb(255, 132, 0),
+        rgb(218, 212, 32)
+      );
+      box-shadow: 3px 3px 10px #151414;
+      border: 5px yellow outset;
+    }
+  }
+  .baseStats {
+    font-size: larger;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+
+  }
+  .type{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    li {
+      font-size: larger;
+      font-weight: bold;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      border: 1px solid black;
+      border-radius: 1rem;
+      color: rgb(5, 5, 5);
+      background: linear-gradient(
+        to right,
+        rgb(218, 32, 32),
+        rgb(255, 132, 0),
+        rgb(218, 212, 32)
+      );
+      box-shadow: 3px 3px 10px #151414;
+      border: 5px yellow outset;
+    }
   }
 }
