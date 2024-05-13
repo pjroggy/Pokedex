@@ -4,7 +4,7 @@ const FetchPokemonData = async (url) => {
     if (!response.ok) {
       throw new Error("Failed to fetch Pokémon data");
     }
-    return await response.json();
+    return response.json();
   } catch (error) {
     console.error("error fetching PokemonData", error);
     throw error;

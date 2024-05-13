@@ -70,7 +70,7 @@ a {
 }
 .wrapper::after {
   bottom: 0;
-  opacity: 1;
+  opacity: 0;
   background-image: linear-gradient(
     to bottom,
     transparent 46%,
@@ -81,7 +81,7 @@ a {
 }
 
 .pokemonCard:hover .wrapper::before,
-.wrapper::after {
+.pokemonCard:hover .wrapper::after {
   opacity: 1;
 }
 

@@ -12,15 +12,17 @@ function PokemonDetail() {
       .then((res) => res.json())
       .then((data) => {
         setNewPokemonDetails(data);
-        setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
 
   if (isLoading) {
-    <p>Loading...</p>;
+    return <p>Loading...</p>;
   }
   return (
     <>
@@ -49,7 +51,9 @@ function PokemonDetail() {
             pokemonDetails.stats.map((poke) => {
               return (
                 <>
-                  <li>{poke.stat.name} : {poke.base_stat}</li>
+                  <li>
+                    {poke.stat.name} : {poke.base_stat}
+                  </li>
                 </>
               );
             })}

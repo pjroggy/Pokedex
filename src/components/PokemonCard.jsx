@@ -6,7 +6,7 @@ function PokemonCard({ pokemon }) {
     <>
       <Link to={`pokemon/${pokemon.name}`}>
         <section className="pokemonCard">
-          <h1># {pokemon.id}</h1>
+          <h2># {pokemon.id}</h2>
           <div className="wrapper">
           <img
             src={pokemon.sprites.front_default}

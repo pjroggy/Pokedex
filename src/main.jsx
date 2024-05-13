@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       const pokemonDetails = await Promise.all(
         pokemonUrls.map(FetchPokemonData)
       );
-
+      console.info(pokemonList)
       return { pokemonList, pokemonDetails };
     },
     id: "app",
